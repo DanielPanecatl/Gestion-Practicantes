@@ -1,0 +1,51 @@
+  <nav>
+    <div class="nav-wrapper" style="background-color: #212121">
+    <?php 
+        session_start();
+        if ((isset($_SESSION['u_User1'])) && ($_SESSION['u_User1'] != ""))
+        {
+          $nombreSesion=$_SESSION['u_User1'];
+          $id = $_SESSION["u_User2"];
+          $nombre = $_SESSION["u_User5"];
+          if($id == 1)
+          {
+            echo "<a href='/INTECC/ui/inicio.php' class='brand-logo'><i class='material-icons'>cloud</i>Logo</a>";
+            echo "<ul class='right hide-on-med-and-down'>
+                    <li><a href='#'><i class='material-icons' >search</i></a></li>
+                    <li><a href='#'><i class='material-icons'>notifications_active</i></a></li>";
+          }
+          else
+          {
+            echo "<a href='/INTECC/ui/inicioa.php' class='brand-logo'><i class='material-icons'>cloud</i>Logo</a>";
+            echo "<ul class='right hide-on-med-and-down'>
+                    <li><a href='#'><i class='material-icons' >search</i></a></li>
+                    <li><a href='#'><i class='material-icons'>notifications_active</i></a></li>";
+          }
+          echo "<li>ID: $id</li>";
+          echo "<li>, Usuario: $nombre</li>";
+        }
+
+        /*---------------------------Validadcion de usuario------------------------------------------------------*/
+        else if ((isset($_SESSION['u_User3'])) && ($_SESSION['u_User3'] != "")) {
+          $nombreSesion=$_SESSION['u_User3'];
+          $id = $_SESSION["u_User4"];
+          $nombre = $_SESSION["u_User6"];
+
+          echo "<a href='/INTECC/ui/iniciou.php' class='brand-logo'><i class='material-icons'>cloud</i>Logo</a>";
+          echo "<ul class='right hide-on-med-and-down'>
+                    <li><a href='#'><i class='material-icons' >search</i></a></li>
+                    <li><a href='#'><i class='material-icons'>notifications_active</i></a></li>";
+          echo "<li>$nombre</li>";
+        }
+
+        if (isset($_SESSION['u_User1']) || isset($_SESSION['u_User3'])) {
+        }
+        else
+        {
+          header("location: ../index.php");
+        }
+        echo "<li><a href='../db/cerrar_sesion.php'><i class='material-icons'>power_settings_new</i></a></li>";
+        ?> 
+      </ul>
+    </div>
+  </nav>

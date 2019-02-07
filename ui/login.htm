@@ -1,0 +1,52 @@
+<body background="ui/img/login.jpg"></body>
+<div class="center-align">
+<img class="responsive-img" src="ui/img/inicio.png">
+</div>
+<div class="container">
+	<ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">supervisor_account</i>Administrador</div>
+      <div class="collapsible-body" style="background-color: white">
+        <div class="row">
+          <form class="col s12" action="db/Login.php" method="POST" name="Form1">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="txtUser" type="text" class="validate" required>
+                <label for="txtUser1">Usuario</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">vpn_key</i>
+                <input name="txtPass" type="password" class="validate" required>
+                <label for="txtPass1">Contraseña</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar<i class="material-icons right">send</i></button>
+          </form>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">person</i>Usuario</div>
+      <div class="collapsible-body" style="background-color: white">
+        <div class="row">
+          <form class="col s12" action="db/Login.php" method="POST" name="Form2">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="personal_user" type="text" class="validate" required>
+                <label for="personal_user">Usuario</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">vpn_key</i>
+                <input name="personal_pass" type="password" class="validate" required>
+                <label for="personal_pass">Contraseña</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Ingresar<i class="material-icons right">send</i></button>
+          </form>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
